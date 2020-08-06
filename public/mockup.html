@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script crossorigin type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+	<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="../src/style.css">
+	<script src="../chart.js"></script>
+
+</head>
+
+<body>
+	<div id="search" class="container">
+		<div class="row">
+			<div class="col-md-12">
+	            <div class="input-group" id="adv-search">
+	                <input type="text" class="form-control" placeholder="Search by SKU" />
+	                <div class="input-group-btn">
+	                    <div class="btn-group" role="group">
+	                        <div class="dropdown dropdown-lg">
+	                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+	                            	<span class="caret"></span>
+	                            </button>
+	                            <div class="dropdown-menu dropdown-menu-right" role="menu">
+	                                <form class="form-horizontal" role="form">
+	                                  <div class="form-group">
+	                                    <label for="filter">State</label>
+	                                    <select class="form-control">
+	                                        <option value="0" selected>All States</option>
+	                                        <option value="1">South Australia</option>
+	                                        <option value="2">Queensland</option>
+	                                        <option value="3">Western Australia</option>
+	                                        <option value="4">New South Wales</option>
+	                                        <option value="5">Northern Territory</option>
+	                                        <option value="6">Victoria</option>
+	                                        <option value="7">Tasmania</option>
+	                                    </select>
+	                                  </div>
+	                                  <div class="form-group">
+	                                    <label for="contain">Category</label>
+	                                    <input class="form-control" type="text" />
+	                                  </div>
+	                                  <div class="form-group">
+	                                    <label for="contain">Subcategory</label>
+	                                    <input class="form-control" type="text" />
+	                                  </div>
+	                                  <button type="submit" class="btn btn-primary">
+	                                  	<span class="fas fa-search" aria-hidden="true"></span>
+	                                  </button>
+	                                </form>
+	                            </div>
+	                        </div>
+	                        <button type="button" class="btn btn-primary">
+	                        	<span class="fas fa-search" aria-hidden="true"></span>
+	                        </button>
+	                    </div>
+	                </div>
+	            </div>
+	          </div>
+	        </div>
+		</div>
+	</div>
+
+	<div id="chart_div"></div>
+
+	<div id="summary" class="container">
+		<div class="row">
+			<div class="col-lg-5" id="summary_common">
+		    </div>
+		    <div class="col-lg-5" id="summary_drakes">
+		    </div>
+		</div>
+	</div>
+
+	<script src="../table.js"></script>
+</body>
+</html>
