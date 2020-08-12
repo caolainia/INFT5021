@@ -1,19 +1,20 @@
-#chart_div{
-	width: 100%;
-	height: 500px;
-}
-#summary{
-	margin-left: 10%;
-}
-
-
-/*Search bar*/
 body {
     padding-top: 50px;
+    font-family: "Open sans", "Segoe UI", "Segoe WP", Helvetica, Arial, sans-serif;
+	color: #7F8C9A;
+	background: #FCFDFD;
+}
+
+/*Search bar*/
+#search{
+	margin-top: 1em;
 }
 .dropdown.dropdown-lg .dropdown-menu {
     margin-top: -1px;
     padding: 6px 20px;
+}
+.dropdown-menu-right{
+	left: 42px !important;
 }
 .input-group-btn .btn-group {
     display: flex !important;
@@ -50,4 +51,89 @@ body {
     .dropdown.dropdown-lg .dropdown-menu {
         min-width: 500px;
     }
+}
+
+/*Loader*/
+.loader {
+	border: 16px solid #f3f3f3; /* Light grey */
+	border-top: 16px solid #3498db; /* Blue */
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	animation: spin 2s linear infinite;
+	margin: auto;
+}
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+
+#chart-div{
+	height: 450px;
+}
+#summary{
+	margin-left: 10%;
+}
+
+
+
+/*File upload*/
+#file-form {
+  width: 350px;
+  margin: 0 auto;
+  text-align: center;
+}
+.input-file-container {
+  position: relative;
+  width: 350px;
+} 
+.js .input-file-trigger {
+  display: block;
+  padding: 14px 45px;
+  background: #39D2B4;
+  color: #fff;
+  font-size: 1em;
+  transition: all .4s;
+  cursor: pointer;
+}
+.js .input-file {
+  position: absolute;
+  top: 0; left: 0;
+  width: 350px;
+  opacity: 0;
+  padding: 14px 0;
+  cursor: pointer;
+}
+.js .input-file:hover + .input-file-trigger,
+.js .input-file-trigger:hover {
+  background: #34495E;
+  color: #39D2B4;
+}
+
+.file-return {
+  margin: 0;
+}
+
+.js .file-return {
+  font-style: italic;
+  font-size: .9em;
+  font-weight: bold;
+}
+.js .file-return:not(:empty):before {
+  content: "Selected file: ";
+  font-style: normal;
+  font-weight: normal;
+}
+
+
+.small-icon{
+	margin-top: 0.2em;
+	margin-left: 0.5em;
+	display: none;
+	cursor: pointer;
+}
+
+#confirm-files{
+	
 }

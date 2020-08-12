@@ -18,68 +18,48 @@
 </head>
 
 <body>
-	<div id="search" class="container">
-		<div class="row">
-			<div class="col-md-12">
-	            <div class="input-group" id="adv-search">
-	                <input type="text" class="form-control" placeholder="Search by SKU" />
-	                <div class="input-group-btn">
-	                    <div class="btn-group" role="group">
-	                        <div class="dropdown dropdown-lg">
-	                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-	                            	<span class="caret"></span>
-	                            </button>
-	                            <div class="dropdown-menu dropdown-menu-right" role="menu">
-	                                <form class="form-horizontal" role="form">
-	                                  <div class="form-group">
-	                                    <label for="filter">State</label>
-	                                    <select class="form-control">
-	                                        <option value="0" selected>All States</option>
-	                                        <option value="1">South Australia</option>
-	                                        <option value="2">Queensland</option>
-	                                        <option value="3">Western Australia</option>
-	                                        <option value="4">New South Wales</option>
-	                                        <option value="5">Northern Territory</option>
-	                                        <option value="6">Victoria</option>
-	                                        <option value="7">Tasmania</option>
-	                                    </select>
-	                                  </div>
-	                                  <div class="form-group">
-	                                    <label for="contain">Category</label>
-	                                    <input class="form-control" type="text" />
-	                                  </div>
-	                                  <div class="form-group">
-	                                    <label for="contain">Subcategory</label>
-	                                    <input class="form-control" type="text" />
-	                                  </div>
-	                                  <button type="submit" class="btn btn-primary">
-	                                  	<span class="fas fa-search" aria-hidden="true"></span>
-	                                  </button>
-	                                </form>
-	                            </div>
-	                        </div>
-	                        <button type="button" class="btn btn-primary">
-	                        	<span class="fas fa-search" aria-hidden="true"></span>
-	                        </button>
-	                    </div>
-	                </div>
-	            </div>
-	          </div>
-	        </div>
+	<div id="initial-loader" class="loader"></div>
+
+	<div id="content">
+
+		<div class="container">
+			<div class="row">
+				<div id="file-form" class="container col-6">
+				  <div class="input-file-container">  
+				    <input class="input-file" id="my-file" type="file">
+				    <label tabindex="0" for="my-file" class="input-file-trigger">Select a file...</label>
+				  </div>
+				  <div class="d-flex flex-row align-items-start">
+					  <p class="file-return"></p>
+					  <div id="clearall" class="far fa-times-circle small-icon" onclick="clearFiles()"></div>
+					  <div id="confirm-files" class="fas fa-check small-icon" onclick="confirmFiles()"></div>
+				  </div>
+				</div>
+
+				<div id="search" class="container col-6"></div>
+			</div>
+		</div>
+		
+
+		
+		
+		<div id="chart-area" class="container-fluid">
+			<div class="row">
+				<div id="chart-div" class="col-12"></div>
+			</div>
+		</div>
+
+		<div id="summary" class="container">
+			<div class="row">
+				<div class="col-lg-5" id="summary_common">
+			    </div>
+			    <div class="col-lg-5" id="summary_drakes">
+			    </div>
+			</div>
 		</div>
 	</div>
 
-	<div id="chart_div"></div>
-
-	<div id="summary" class="container">
-		<div class="row">
-			<div class="col-lg-5" id="summary_common">
-		    </div>
-		    <div class="col-lg-5" id="summary_drakes">
-		    </div>
-		</div>
-	</div>
-
+	<script src="../app.js"></script>
 	<script src="../table.js"></script>
 </body>
 </html>
