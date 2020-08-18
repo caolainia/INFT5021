@@ -22,39 +22,38 @@
 
 	<div id="content">
 
-		<div class="container">
-			<div class="row">
-				<div id="file-form" class="container col-6">
-				  <div class="input-file-container">  
-				    <input class="input-file" id="my-file" type="file">
-				    <label tabindex="0" for="my-file" class="input-file-trigger">Select a file...</label>
-				  </div>
-				  <div class="d-flex flex-row align-items-start">
-					  <p class="file-return"></p>
-					  <div id="clearall" class="far fa-times-circle small-icon" onclick="clearFiles()"></div>
-					  <div id="confirm-files" class="fas fa-check small-icon" onclick="confirmFiles()"></div>
-				  </div>
+		<div class="sidenav">
+			
+			<div id="file-form">
+			  <div class="input-file-container">  
+			    <input class="input-file" id="my-file" type="file">
+			    <label tabindex="0" for="my-file" class="input-file-trigger">Select a file...</label>
+			  </div>
+			  <div class="d-flex flex-row align-items-start">
+				  <p class="file-return"></p>
+				  <div id="clearall" class="far fa-times-circle small-icon" onclick="clearFiles()"></div>
+				  <div id="confirm-files" class="fas fa-check small-icon" onclick="confirmFiles()"></div>
+			  </div>
+			</div>
+
+			<div id="search"></div>
+			
+		</div>
+		
+		<div id="content-view">
+			<div id="chart-area" class="container-fluid">
+				<div class="row">
+					<div id="chart-div" class="col-12"></div>
 				</div>
-
-				<div id="search" class="container col-6"></div>
 			</div>
-		</div>
-		
 
-		
-		
-		<div id="chart-area" class="container-fluid">
-			<div class="row">
-				<div id="chart-div" class="col-12"></div>
-			</div>
-		</div>
-
-		<div id="summary" class="container">
-			<div class="row">
-				<div class="col-lg-5" id="summary_common">
-			    </div>
-			    <div class="col-lg-5" id="summary_drakes">
-			    </div>
+			<div id="summary" class="container">
+				<div class="row">
+					<div class="col-lg-5" id="summary_common">
+				    </div>
+				    <div class="col-lg-5" id="summary_drakes">
+				    </div>
+				</div>
 			</div>
 		</div>
 	</div>

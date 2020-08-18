@@ -57,6 +57,10 @@ function processDrakesData(allText) {
 	// }
 }
 
+$(document).ready(function () {
+	$("#content").hide();
+});
+
 window.onload = function () {
 	document.querySelector("html").classList.add('js');
 	loadUploader();
@@ -86,6 +90,7 @@ function initializeData() {
 
 	// Prepare the data
 	data = google.visualization.arrayToDataTable([['Date', 'Drakes Price', 'Woolworths Price', 'Coles Price', 'Foodland Price'], [new Date(2020, 5, 5), 165, 938, 522, 998], [new Date(2020, 5, 6), 165, 938, 522, 998], [new Date(2020, 5, 7), 165, 600, 522, 998], [new Date(2020, 5, 8), 165, 938, 522, 998], [new Date(2020, 5, 9), 165, 938, 522, 998], [new Date(2020, 5, 10), 165, 938, 200, 998], [new Date(2020, 5, 11), 165, 938, 522, 998], [new Date(2020, 5, 12), 165, 938, 522, 600], [new Date(2020, 5, 13), 165, 938, 522, 998], [new Date(2020, 5, 14), 165, 938, 522, 998], [new Date(2020, 5, 15), 165, 938, 522, 998], [new Date(2020, 5, 16), 165, 938, 522, 998]]);
+	$("#content").show();
 	$("#initial-loader").hide();
 	ReactDOM.render(React.createElement(Search, null), document.getElementById('search'));
 }
@@ -95,7 +100,8 @@ function drawChart() {
 		title: 'Prices on XXXXX',
 		interpolateNulls: true,
 		vAxis: { title: 'Price' },
-		hAxis: { title: 'Date' }
+		hAxis: { title: 'Date' },
+		legend: { position: 'bottom' }
 	};
 
 	var chart = new google.visualization.LineChart(document.getElementById('chart-div'));
@@ -109,9 +115,10 @@ function drawChart() {
 			var value = resultArray[selectedItem.column].Ve;
 
 			// common table
-			ReactDOM.render(React.createElement(SummaryCommon, { promo: value, standard: value }), document.getElementById('summary_common'));
+			ReactDOM.render(React.createElement(SummaryCommon, { head: 'Promotional Summary', promo: value, standard: value }), document.getElementById('summary_common'));
+			// drakes table
 			if (selectedItem.column === 1) {
-				ReactDOM.render(React.createElement(SummaryDrakes, { promo: value, standard: value, show: true }), document.getElementById('summary_drakes'));
+				ReactDOM.render(React.createElement(SummaryDrakes, { volume: value, averageVolume: value, show: true }), document.getElementById('summary_drakes'));
 			} else {
 				ReactDOM.render(React.createElement(SummaryDrakes, { show: false }), document.getElementById('summary_drakes'));
 			}

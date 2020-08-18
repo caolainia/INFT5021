@@ -6,31 +6,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var TableCell = function (_React$Component) {
-	_inherits(TableCell, _React$Component);
-
-	function TableCell() {
-		_classCallCheck(this, TableCell);
-
-		return _possibleConstructorReturn(this, (TableCell.__proto__ || Object.getPrototypeOf(TableCell)).apply(this, arguments));
-	}
-
-	_createClass(TableCell, [{
-		key: "render",
-		value: function render() {
-			return React.createElement(
-				"td",
-				{ id: "table_cell" },
-				this.props.value
-			);
-		}
-	}]);
-
-	return TableCell;
-}(React.Component);
-
-var SummaryCommon = function (_React$Component2) {
-	_inherits(SummaryCommon, _React$Component2);
+var SummaryCommon = function (_React$Component) {
+	_inherits(SummaryCommon, _React$Component);
 
 	function SummaryCommon() {
 		_classCallCheck(this, SummaryCommon);
@@ -39,16 +16,18 @@ var SummaryCommon = function (_React$Component2) {
 	}
 
 	_createClass(SummaryCommon, [{
-		key: "renderCell",
-		value: function renderCell(v) {
-			return React.createElement(TableCell, { value: v });
-		}
-	}, {
 		key: "render",
 		value: function render() {
+			var head = this.props.head;
 			var promo = this.props.promo;
 			var standard = this.props.standard;
 			var discount = (standard - promo) / standard * 100 + "%";
+			var rows = {
+				"Promo price": promo,
+				"Standard shelf price": standard,
+				"Discount (%)": discount,
+				"Catalogue": "Unknown"
+			};
 
 			return React.createElement(
 				"table",
@@ -62,63 +41,29 @@ var SummaryCommon = function (_React$Component2) {
 						React.createElement(
 							"th",
 							{ colSpan: 2, scope: "col" },
-							"Promotional Summary"
+							head
 						)
 					)
 				),
 				React.createElement(
 					"tbody",
 					null,
-					React.createElement(
-						"tr",
-						null,
-						React.createElement(
-							"th",
-							{ scope: "row" },
-							"Promo price"
-						),
-						this.renderCell(promo)
-					),
-					React.createElement(
-						"tr",
-						null,
-						React.createElement(
-							"th",
-							{ scope: "row" },
-							"Standard shelf price"
-						),
-						this.renderCell(standard)
-					),
-					React.createElement(
-						"tr",
-						null,
-						React.createElement(
-							"th",
-							{ scope: "row" },
-							"% discount"
-						),
-						this.renderCell(discount)
-					),
-					React.createElement(
-						"tr",
-						null,
-						React.createElement(
-							"th",
-							{ scope: "row" },
-							"Catalogue"
-						),
-						this.renderCell('Unknown')
-					),
-					React.createElement(
-						"tr",
-						null,
-						React.createElement(
-							"th",
-							{ scope: "row" },
-							"Location"
-						),
-						this.renderCell('Unknown')
-					)
+					Object.keys(rows).map(function (key, index) {
+						return React.createElement(
+							"tr",
+							{ key: index },
+							React.createElement(
+								"th",
+								{ scope: "row" },
+								key
+							),
+							React.createElement(
+								"td",
+								{ id: "table_cell" },
+								rows[key]
+							)
+						);
+					})
 				)
 			);
 		}
@@ -127,8 +72,8 @@ var SummaryCommon = function (_React$Component2) {
 	return SummaryCommon;
 }(React.Component);
 
-var SummaryDrakes = function (_React$Component3) {
-	_inherits(SummaryDrakes, _React$Component3);
+var SummaryDrakes = function (_React$Component2) {
+	_inherits(SummaryDrakes, _React$Component2);
 
 	function SummaryDrakes() {
 		_classCallCheck(this, SummaryDrakes);
@@ -137,16 +82,19 @@ var SummaryDrakes = function (_React$Component3) {
 	}
 
 	_createClass(SummaryDrakes, [{
-		key: "renderCell",
-		value: function renderCell(v) {
-			return React.createElement(TableCell, { value: v });
-		}
-	}, {
 		key: "render",
 		value: function render() {
+			var head = "Drakes Promotional Track";
 			var volume = this.props.volume;
-			var average_volume = this.props.average_volume;
+			var averageVolume = this.props.averageVolume;
+			var uplift = (volume - averageVolume) / averageVolume + "%";
 			var show = this.props.show;
+			var rows = {
+				"Volume": volume,
+				"Average volume": averageVolume,
+				"Uplift (%)": uplift,
+				"Diff to average (%)": "Unknown"
+			};
 			if (show) {
 				return React.createElement(
 					"table",
@@ -160,54 +108,29 @@ var SummaryDrakes = function (_React$Component3) {
 							React.createElement(
 								"th",
 								{ colSpan: 2, scope: "col" },
-								"Drakes Promotional Track ",
-								console.log(this.props.show)
+								head
 							)
 						)
 					),
 					React.createElement(
 						"tbody",
 						null,
-						React.createElement(
-							"tr",
-							null,
-							React.createElement(
-								"th",
-								{ scope: "row" },
-								"Volume"
-							),
-							this.renderCell(volume)
-						),
-						React.createElement(
-							"tr",
-							null,
-							React.createElement(
-								"th",
-								{ scope: "row" },
-								"Average volume at the point"
-							),
-							this.renderCell(average_volume)
-						),
-						React.createElement(
-							"tr",
-							null,
-							React.createElement(
-								"th",
-								{ scope: "row" },
-								"% Uplift"
-							),
-							this.renderCell('Unknown')
-						),
-						React.createElement(
-							"tr",
-							null,
-							React.createElement(
-								"th",
-								{ scope: "row" },
-								"% to avg"
-							),
-							this.renderCell('Unknown')
-						)
+						Object.keys(rows).map(function (key, index) {
+							return React.createElement(
+								"tr",
+								{ key: index },
+								React.createElement(
+									"th",
+									{ scope: "row" },
+									key
+								),
+								React.createElement(
+									"td",
+									{ id: "table_cell" },
+									rows[key]
+								)
+							);
+						})
 					)
 				);
 			}

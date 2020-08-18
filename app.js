@@ -46,125 +46,117 @@ var Search = function (_React$Component) {
     value: function render() {
       return React.createElement(
         "div",
-        { className: "row" },
+        { className: "input-group", id: "adv-search" },
+        React.createElement("input", { type: "text", className: "form-control", placeholder: "Search by SKU/APN",
+          name: "sku", value: this.state.sku, onChange: this.handleChange }),
         React.createElement(
           "div",
-          { className: "col-md-12" },
+          { className: "input-group-btn" },
           React.createElement(
             "div",
-            { className: "input-group", id: "adv-search" },
-            React.createElement("input", { type: "text", className: "form-control", placeholder: "Search by SKU/APN",
-              name: "sku", value: this.state.sku, onChange: this.handleChange }),
+            { className: "btn-group", role: "group" },
             React.createElement(
               "div",
-              { className: "input-group-btn" },
+              { className: "dropdown dropdown-lg" },
+              React.createElement(
+                "button",
+                { type: "button", className: "btn btn-default dropdown-toggle", "data-toggle": "dropdown", "aria-expanded": "false" },
+                React.createElement("span", { className: "caret" })
+              ),
               React.createElement(
                 "div",
-                { className: "btn-group", role: "group" },
+                { className: "dropdown-menu dropdown-menu-right", role: "menu" },
                 React.createElement(
-                  "div",
-                  { className: "dropdown dropdown-lg" },
+                  "form",
+                  { role: "form", className: "form-horizontal" },
                   React.createElement(
-                    "button",
-                    { type: "button", className: "btn btn-default dropdown-toggle", "data-toggle": "dropdown", "aria-expanded": "false" },
-                    React.createElement("span", { className: "caret" })
+                    "div",
+                    { className: "form-group" },
+                    React.createElement(
+                      "label",
+                      { htmlFor: "filter" },
+                      "State"
+                    ),
+                    React.createElement(
+                      "select",
+                      { className: "form-control",
+                        name: "area", value: this.state.area, onChange: this.handleChange },
+                      React.createElement(
+                        "option",
+                        { value: 0 },
+                        "All States"
+                      ),
+                      React.createElement(
+                        "option",
+                        { value: 1 },
+                        "South Australia"
+                      ),
+                      React.createElement(
+                        "option",
+                        { value: 2 },
+                        "Queensland"
+                      ),
+                      React.createElement(
+                        "option",
+                        { value: 3 },
+                        "Western Australia"
+                      ),
+                      React.createElement(
+                        "option",
+                        { value: 4 },
+                        "New South Wales"
+                      ),
+                      React.createElement(
+                        "option",
+                        { value: 5 },
+                        "Northern Territory"
+                      ),
+                      React.createElement(
+                        "option",
+                        { value: 6 },
+                        "Victoria"
+                      ),
+                      React.createElement(
+                        "option",
+                        { value: 7 },
+                        "Tasmania"
+                      )
+                    )
                   ),
                   React.createElement(
                     "div",
-                    { className: "dropdown-menu dropdown-menu-right", role: "menu" },
+                    { className: "form-group" },
                     React.createElement(
-                      "form",
-                      { role: "form", className: "form-horizontal" },
-                      React.createElement(
-                        "div",
-                        { className: "form-group" },
-                        React.createElement(
-                          "label",
-                          { htmlFor: "filter" },
-                          "State"
-                        ),
-                        React.createElement(
-                          "select",
-                          { className: "form-control",
-                            name: "area", value: this.state.area, onChange: this.handleChange },
-                          React.createElement(
-                            "option",
-                            { value: 0 },
-                            "All States"
-                          ),
-                          React.createElement(
-                            "option",
-                            { value: 1 },
-                            "South Australia"
-                          ),
-                          React.createElement(
-                            "option",
-                            { value: 2 },
-                            "Queensland"
-                          ),
-                          React.createElement(
-                            "option",
-                            { value: 3 },
-                            "Western Australia"
-                          ),
-                          React.createElement(
-                            "option",
-                            { value: 4 },
-                            "New South Wales"
-                          ),
-                          React.createElement(
-                            "option",
-                            { value: 5 },
-                            "Northern Territory"
-                          ),
-                          React.createElement(
-                            "option",
-                            { value: 6 },
-                            "Victoria"
-                          ),
-                          React.createElement(
-                            "option",
-                            { value: 7 },
-                            "Tasmania"
-                          )
-                        )
-                      ),
-                      React.createElement(
-                        "div",
-                        { className: "form-group" },
-                        React.createElement(
-                          "label",
-                          { htmlFor: "contain" },
-                          "Category"
-                        ),
-                        React.createElement("input", { className: "form-control", type: "text",
-                          name: "cat", value: this.state.cat, onChange: this.handleChange })
-                      ),
-                      React.createElement(
-                        "div",
-                        { className: "form-group" },
-                        React.createElement(
-                          "label",
-                          { htmlFor: "contain" },
-                          "Subcategory"
-                        ),
-                        React.createElement("input", { className: "form-control", type: "text",
-                          name: "subcat", value: this.state.subcat, onChange: this.handleChange })
-                      ),
-                      React.createElement(
-                        "button",
-                        { type: "button", id: "ds-search-button1", onClick: this.submit, className: "btn btn-primary ds-search-button" },
-                        React.createElement("span", { className: "fas fa-search", "aria-hidden": "true" })
-                      )
-                    )
+                      "label",
+                      { htmlFor: "contain" },
+                      "Category"
+                    ),
+                    React.createElement("input", { className: "form-control", type: "text",
+                      name: "cat", value: this.state.cat, onChange: this.handleChange })
+                  ),
+                  React.createElement(
+                    "div",
+                    { className: "form-group" },
+                    React.createElement(
+                      "label",
+                      { htmlFor: "contain" },
+                      "Subcategory"
+                    ),
+                    React.createElement("input", { className: "form-control", type: "text",
+                      name: "subcat", value: this.state.subcat, onChange: this.handleChange })
+                  ),
+                  React.createElement(
+                    "button",
+                    { type: "button", id: "ds-search-button1", onClick: this.submit, className: "btn btn-primary ds-search-button" },
+                    React.createElement("span", { className: "fas fa-search", "aria-hidden": "true" })
                   )
-                ),
-                React.createElement(
-                  "button",
-                  { type: "button", id: "ds-search-button2", onClick: this.submit, className: "btn btn-primary ds-search-button" },
-                  React.createElement("span", { className: "fas fa-search", "aria-hidden": "true" })
                 )
               )
+            ),
+            React.createElement(
+              "button",
+              { type: "button", id: "ds-search-button2", onClick: this.submit, className: "btn btn-primary ds-search-button" },
+              React.createElement("span", { className: "fas fa-search", "aria-hidden": "true" })
             )
           )
         )

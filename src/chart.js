@@ -56,6 +56,10 @@ function processDrakesData(allText) {
     // }
 }
 
+$(document).ready(function() {
+    $("#content").hide();
+});
+
 window.onload = function() {
   	document.querySelector("html").classList.add('js');
   	loadUploader();
@@ -102,6 +106,7 @@ function initializeData() {
 		[new Date(2020,5,15),  165,      938,                  522,             998],
 		[new Date(2020,5,16),  165,      938,                  522,             998]
 	]);
+	$("#content").show();
 	$("#initial-loader").hide();
 	ReactDOM.render(<Search />, document.getElementById('search'));
 }
@@ -112,7 +117,8 @@ function drawChart() {
 		title : 'Prices on XXXXX',
 		interpolateNulls: true,
 		vAxis: {title: 'Price'},
-		hAxis: {title: 'Date'}
+		hAxis: {title: 'Date'},
+		legend: { position: 'bottom' }
 	};
 
 	var chart = new google.visualization.LineChart(document.getElementById('chart-div'));
@@ -127,12 +133,13 @@ function drawChart() {
 
 			// common table
 			ReactDOM.render(
-			  <SummaryCommon promo={value} standard={value} />,
+			  <SummaryCommon head="Promotional Summary" promo={value} standard={value} />,
 			  document.getElementById('summary_common')
 			);
+			// drakes table
 			if (selectedItem.column === 1) {
 				ReactDOM.render(
-				  <SummaryDrakes promo={value} standard={value} show={true} />,
+				  <SummaryDrakes volume={value} averageVolume={value} show={true} />,
 				  document.getElementById('summary_drakes')
 				);
 			} else {

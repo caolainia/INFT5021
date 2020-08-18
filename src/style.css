@@ -1,27 +1,48 @@
 body {
     padding-top: 50px;
     font-family: "Open sans", "Segoe UI", "Segoe WP", Helvetica, Arial, sans-serif;
-	color: #7F8C9A;
-	background: #FCFDFD;
+  	color: #7F8C9A;
+  	background: #FCFDFD;
 }
+
+/*side bar*/
+.sidenav {
+    height: 100%;
+    width: 450px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #222;
+    overflow-x: hidden;
+    padding-top: 20px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 /*Search bar*/
 #search{
-	margin-top: 1em;
+	margin-top: 5em;
 }
+.dropdown.dropdown-lg{
+    background: #33ccff;
+}
+
 .dropdown.dropdown-lg .dropdown-menu {
     margin-top: -1px;
     padding: 6px 20px;
-}
-.dropdown-menu-right{
-	left: 42px !important;
+    min-width: 400px;
+    margin-left: 20px;
 }
 .input-group-btn .btn-group {
     display: flex !important;
 }
 .btn-group .btn {
     border-radius: 0;
-    margin-left: -1px;
 }
 .btn-group .btn:last-child {
     border-top-right-radius: 4px;
@@ -40,18 +61,11 @@ body {
     border-bottom-left-radius: 4px;
 }
 
-@media screen and (min-width: 768px) {
-    #adv-search {
-        width: 500px;
-        margin: 0 auto;
-    }
-    .dropdown.dropdown-lg {
-        position: static !important;
-    }
-    .dropdown.dropdown-lg .dropdown-menu {
-        min-width: 500px;
-    }
+#adv-search {
+    width: 400px !important;
 }
+
+
 
 /*Loader*/
 .loader {
@@ -69,24 +83,15 @@ body {
 }
 
 
-#chart-div{
-	height: 450px;
-}
-#summary{
-	margin-left: 10%;
-}
-
-
-
 /*File upload*/
 #file-form {
-  width: 350px;
-  margin: 0 auto;
+  width: 400px;
+  margin-top: 50px;
   text-align: center;
 }
 .input-file-container {
   position: relative;
-  width: 350px;
+  width: 400px;
 } 
 .js .input-file-trigger {
   display: block;
@@ -100,7 +105,7 @@ body {
 .js .input-file {
   position: absolute;
   top: 0; left: 0;
-  width: 350px;
+  width: 400px;
   opacity: 0;
   padding: 14px 0;
   cursor: pointer;
@@ -136,4 +141,17 @@ body {
 
 #confirm-files{
 	
+}
+
+
+/*Right*/
+#content-view{
+    padding-left: 500px;
+}
+#chart-div{
+    height: 450px;
+}
+#summary{
+    margin-top: 2em;
+    margin-left: 12%;
 }
