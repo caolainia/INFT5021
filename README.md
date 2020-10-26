@@ -1,10 +1,6 @@
-# INFT5021
-INFS5021 Dashboard preliminary mockup
+Here are all the python code used as a supplementary approach to data preprocessing.
 
-Done by React.js, but got rejected as the client wants it to be done in Excel so that they are able to continuously update them.
+There are a certain amount of work are done in Excel, which cannot be shown here due to the confidentiality agreement
 
-Navigate to "./public"
-
-Open "mockup.html"
-
-Click any point on the line chart to spawn the summary table
+The chronological order of our work, is: 
+Mockup in React -> Expand Catalogue -> Add price and qty -> APN ID match
